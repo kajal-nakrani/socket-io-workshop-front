@@ -1,23 +1,21 @@
-import './App.css';
-import Message from "./Message"
+import { useState } from "react";
+import "./App.css";
+import UserName from "./UserName";
+import ChatWindow from "./ChatWindow";
 
 const App = () => {
+  const [me, setMe] = useState();
+  const [username, setUsername] = useState();
+
   return (
-    <div className="iphone">
-      <div className="border">
-        <div className="responsive-html5-chat">
-          <form className="chat">
-            <span></span>
-            <div className="messages">
-              <Message text="Hello world" />
-            </div>
-            <input type="text" placeholder="Your message" />
-            <input type="submit" value="Send" />
-          </form>
-        </div>
-      </div>
-    </div>
+    <>
+      {!me ? (
+        <UserName username={username} setUsername={setUsername} setMe={setMe} />
+      ) : (
+        <ChatWindow me={me} />
+      )}
+    </>
   );
-}
+};
 
 export default App;
