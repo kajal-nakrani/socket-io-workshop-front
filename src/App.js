@@ -3,12 +3,12 @@ import Message from "./Message"
 
 const App = () => {
   return (
-    <div class="iphone">
-      <div class="border">
-        <div class="responsive-html5-chat">
-          <form class="chat">
+    <div className="iphone">
+      <div className="border">
+        <div className="responsive-html5-chat">
+          <form className="chat">
             <span></span>
-            <div class="messages">
+            <div className="messages">
               <Message text="Hello world" />
             </div>
             <input type="text" placeholder="Your message" />

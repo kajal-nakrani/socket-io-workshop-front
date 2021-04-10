@@ -5,7 +5,7 @@ const Message = ({from = "me", date = new Date().toLocaleTimeString(), text}) =>
         <div className="message">
     <div className={from === "me" ? "myMessage" : "fromThem"} data-date={date}>
       <p>{text}</p>
-      <date> {from === "me" ? "You: " : `${from}: `} {date} </date>
+      <span> {from === "me" ? "You: " : `${from}: `} {date} </span>
     </div>
   </div>
      );

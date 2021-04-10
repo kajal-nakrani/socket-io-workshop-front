@@ -70,7 +70,7 @@ form.chat .message:hover .fromThem {
   transform: translateX(130px);
 }
 
-form.chat .message:hover date {
+form.chat .message:hover span {
   opacity: 1;
 }
 
@@ -153,7 +153,7 @@ form.chat .fromThem:after {
   transform: translate(-30px, -2px);
 }
 
-form.chat date {
+form.chat span {
   position: absolute;
   top: 10px;
   font-size: 14px;
@@ -164,11 +164,11 @@ form.chat date {
   z-index: 4;
 }
 
-form.chat .myMessage date {
+form.chat .myMessage span {
   left: 105%;
 }
 
-form.chat .fromThem date {
+form.chat .fromThem span {
   right: 105%;
 }
 
@@ -208,8 +208,8 @@ form.chat .message:hover .fromThem {
   transform: translateY(18px);
 }
 
-form.chat .myMessage date,
-form.chat .fromThem date {
+form.chat .myMessage span,
+form.chat .fromThem span {
   top: -20px;
   left: auto;
   right: 0;
