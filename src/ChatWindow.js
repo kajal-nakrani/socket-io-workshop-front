@@ -1,21 +1,48 @@
-import React from 'react'
+import React from "react";
 import Message from "./Message";
 
-const ChatWindow = ({ me }) => {
-    return ( <div className="iphone">
-    <div className="border">
-      <div className="responsive-html5-chat">
-        <form className="chat">
-          <span></span>
-          <div className="messages">
-            <Message text="Hello world" />
-          </div>
-          <input type="text" placeholder="Your message" />
-          <input type="submit" value="Send" />
-        </form>
+const ChatWindow = ({
+  me,
+  messages,
+  message,
+  setMessage,
+  onNewMessage,
+  chatRoomInfo,
+}) => {
+  return (
+    <div className="iphone">
+      <div className="border">
+        <div className="responsive-html5-chat">
+          <form className="chat" onSubmit={onNewMessage}>
+            <div className="connected">
+              <strong>ComeTalkToMe</strong> - Connected users:{" "}
+              {chatRoomInfo && chatRoomInfo.numberOfConnectedUsers}
+            </div>
+            <div className="messages">
+              {messages.map((message) => {
+                return (
+                  <Message
+                    key={message.id}
+                    text={message.text}
+                    date={message.date}
+                    from={message.from}
+                    color={message.color}
+                  />
+                );
+              })}
+            </div>
+            <input
+              type="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Your message"
+            />
+            <input type="submit" value="Send" />
+          </form>
+        </div>
       </div>
     </div>
-  </div> );
-}
- 
+  );
+};
+
 export default ChatWindow;

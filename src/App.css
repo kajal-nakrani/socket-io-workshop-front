@@ -1,3 +1,7 @@
+:root {
+  --bubble-color: #e5eae7;
+}
+
 body {
   background: #007398;
   display: flex;
@@ -22,12 +26,18 @@ form.chat {
   user-select: none;
 }
 
+.connected {
+  border-bottom: 2px solid #007398;
+  text-align: center;
+}
+
 form.chat .messages {
   display: block;
   overflow-x: hidden;
   overflow-y: scroll;
   position: relative;
-  height: 90%;
+  margin-top: 0.7rem;
+  height: 84%;
   width: 100%;
   padding: 2% 3%;
   border-bottom: 1px solid #ecf0f1;
@@ -120,7 +130,7 @@ form.chat .myMessage:after {
 }
 
 form.chat .fromThem {
-  background: #e5e5ea;
+  background: var(--bubble-color);
   color: black;
   float: left;
   clear: both;
@@ -133,7 +143,7 @@ form.chat .fromThem:before {
   bottom: -2px;
   left: -7px;
   height: 19px;
-  border-left: 20px solid #e5e5ea;
+  border-left: 20px solid var(--bubble-color);
   border-bottom-right-radius: 16px 14px;
   transform: translate(0, -2px);
   border-bottom-right-radius: 15px 0px\9;
